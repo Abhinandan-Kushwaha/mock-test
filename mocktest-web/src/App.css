@@ -1,0 +1,13 @@
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  color: white;
+  flex-direction: column;
+}
+
+.appHeader {
+  margin:20px;
+  text-align: center;
+  justify-content: center;
+}

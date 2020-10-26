@@ -1,0 +1,20 @@
+.buttonBarContainer{
+    display: flex;
+    flex:1;
+    height: 50px;
+    width: 300px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.skipButton{
+    font-size: 16px;
+    color: whitesmoke;
+    background-color: black;
+    border: 1px solid gray;
+}
+.nextButton{
+    font-size: 16px;
+    color: whitesmoke;
+    background-color: green;
+    border: 1px solid gray;
+}
