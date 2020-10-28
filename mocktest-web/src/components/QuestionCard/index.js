@@ -10,18 +10,19 @@ export const QuestionCard = (props) => {
                 <div className="questionNumberContainer">
                     {questionNumber}
                 </div>
-                {isImage
-                    ?
-                    <div className="questionImageContainer">
-                        <img
-                            src={imageUrl}
-                            className="questionImage" />
-                    </div>
-                    :
-                    <div className="questionTextContainer">
-                        {text}
-                    </div>}
+
+                <div className="questionTextContainer">
+                    {text}
+                </div>
             </div>
+            {isImage
+                &&
+                <div className="questionImageContainer">
+                    <img
+                        src={imageUrl}
+                        className="questionImage" />
+                </div>
+            }
             {renderOptions(props)}
         </div>
     )

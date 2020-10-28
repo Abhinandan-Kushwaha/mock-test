@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import TestScreen from './screens/TestScreen';
-import LoginScreen from './screens/LoginScreen';
+import LandingScreen from './screens/LandingScreen';
 import './App.css';
 
 function App() {
@@ -9,9 +9,10 @@ function App() {
     <Router>
       <div className="App">
         <div className="appHeader">
-          Hello Welcome to Assignment Web
+          Mock Test
         </div>
-        <Route path="/" exact component={LoginScreen} />
+        <Route path="/" exact component={LandingScreen} />
+        <Route path="/mocktest" exact component={TestScreen} />
       </div>
     </Router>
   );

@@ -3,16 +3,16 @@ import './index.css';
 import { Button } from '../Button';
 
 export const ButtonBar = (props) => {
-    const { nextPressed, selectedOptionNumber } = props;
+    const { nextPressed, skipPressed, nextLoading, selectedOptionNumber } = props;
     return (
         <div className="buttonBarContainer">
             <Button
-                onClick={nextPressed}
-                backgroundColor={"black"}
+                onClick={nextLoading ? null : skipPressed}
+                backgroundColor={nextLoading ? "gray" : "black"}
                 text={"Skip"} />
             <Button
-                onClick={selectedOptionNumber === 0 ? null : nextPressed}
-                backgroundColor={selectedOptionNumber === 0 ? "gray" : "green"}
+                onClick={selectedOptionNumber === 0 || nextLoading ? null : nextPressed}
+                backgroundColor={selectedOptionNumber === 0 || nextLoading ? "gray" : "green"}
                 text={"Next"} />
 
         </div>

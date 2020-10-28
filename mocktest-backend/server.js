@@ -22,16 +22,16 @@ app.get('/', (req, res) => {
 })
 
 const userRouter = require('./routes/users');
-const loginRouter=require('./routes/login');
-// const addQuestion = require('./routes/addQuestions');
+const loginRouter = require('./routes/login');
+const addQuestion = require('./routes/addQuestions');
 
 app.use('/users', userRouter);
-app.use('/login',loginRouter);
-// app.use('/questions', addQuestion);
+app.use('/login', loginRouter);
+app.use('/questions', addQuestion);
 
-const mockTestRouter=require('./routes/mockTest');
+const mockTestRouter = require('./routes/mockTest');
 
-app.use('/mockTest',mockTestRouter);
+app.use('/mockTest', mockTestRouter);
 
 
 

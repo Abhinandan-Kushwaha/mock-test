@@ -9,3 +9,13 @@
     justify-content: center;
     align-items: center;
 }
+.topBarContainer{
+    display: flex;
+    flex: 1;
+    height: 60px;
+    background-color: red;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
