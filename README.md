@@ -23,6 +23,9 @@ question in a graph.
 
 ### Screenshots
 
+![Demo Question](/question.png)
+![Demo OMR Sheet](/omr.png)
+
 ### Technologies
 
 #### Front End
