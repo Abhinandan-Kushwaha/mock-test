@@ -25,7 +25,7 @@ const LandingScreen = props => {
                 if (res && res.status === 200) {
                     const { userName } = res.data;
                     dispatch(login(id, userName));
-                    props.history.push('/mocktest')
+                    props.history.push('/mockTest')
                 }
             })
             .catch(err => {

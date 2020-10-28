@@ -66,4 +66,12 @@ router.route('/bookmark').post((req, res) => {
         .catch(err => res.status(400).json('error ' + err));
 });
 
+router.route('/omr').post((req, res) => {
+    const { userId, testId } = req.body;
+
+    userTest.findOne({ userId: userId, testId: testId })
+        .then(response => res.status(200).json(response))
+        .catch(err => res.status(400).json('error ' + err));
+});
+
 module.exports = router;

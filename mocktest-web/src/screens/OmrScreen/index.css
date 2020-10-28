@@ -1,0 +1,80 @@
+.omrContainer{
+    overflow: auto;
+    flex-direction: column;
+    flex:1;
+}
+.omrHeader{
+    background-color: rgb(98, 123, 155);
+    display: flex;
+    flex-direction: column;
+    height:70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.userDetailsRow{
+    display: flex;
+    flex-direction: column;
+}
+
+.omrBox{
+    background-color: #F3F7F7;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+}
+
+.omrQuestionRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color:black;
+}
+
+.bubble{
+    height:16px;
+    width:16px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.markedBubble{
+    height:16px;
+    width:16px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.omrQnumber{
+    display: flex;
+    height:40px;
+    width:30px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bookmarkContainer{
+    display: flex;
+    height:40px;
+    width:30px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.omrBubbles{
+    display: flex;
+    flex-direction: row;
+    height:40px;
+    width:180px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.backButton{
+    position: fixed;
+    left:10px;
+    top:80px;
+    cursor: pointer;
+}

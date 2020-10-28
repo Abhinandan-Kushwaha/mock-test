@@ -12,7 +12,7 @@ function App() {
           Mock Test
         </div>
         <Route path="/" exact component={LandingScreen} />
-        <Route path="/mocktest" exact component={TestScreen} />
+        <Route path="/mockTest" exact component={TestScreen} />
       </div>
     </Router>
   );

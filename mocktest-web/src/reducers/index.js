@@ -1,12 +1,10 @@
-const userReducer = (state = { userId: '', userName: '' }, action) => {
-    switch (action.type) {
-        case 'LOGIN':
-            return {
-                userId: action.payload.userId,
-                userName: action.payload.userName
-            }
-        default:
-            return state;
-    }
-}
-export default userReducer;
+import { combineReducers } from 'redux';
+import userReducer from './userReducer';
+import testReducer from './testReducer';
+
+const rootReducer = combineReducers({
+    user: userReducer,
+    test: testReducer
+});
+
+export default rootReducer;
