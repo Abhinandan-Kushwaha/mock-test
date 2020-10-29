@@ -21,7 +21,7 @@ const LandingScreen = props => {
 
         API.post('login/', { userId: id })
             .then(res => {
-                console.log('res', res);
+                // console.log('res', res);
                 if (res && res.status === 200) {
                     const { userName } = res.data;
                     dispatch(login(id, userName));
@@ -29,7 +29,7 @@ const LandingScreen = props => {
                 }
             })
             .catch(err => {
-                console.log('err', err);
+                // console.log('err', err);
                 alert('Some error occured');
                 setState({ id: '', loading: false })
             });
@@ -46,10 +46,10 @@ const LandingScreen = props => {
                         : <div>
                             The app demonstrates online mock-test feature. Since authenticatication is not integrated,
                             you can proceed with any one of these ids-
-                        <div className="ids">
-                                <div onClick={() => onLoginPressed('user1')}>user1</div>
-                                <div onClick={() => onLoginPressed('user2')}>user2</div>
-                                <div onClick={() => onLoginPressed('user3')}>user3</div>
+                        <div className="idsRow">
+                                <div className="ids" onClick={() => onLoginPressed('user1')}>user1</div>
+                                <div className="ids" onClick={() => onLoginPressed('user2')}>user2</div>
+                                <div className="ids" onClick={() => onLoginPressed('user3')}>user3</div>
                             </div>
                         </div>}
                 </div>

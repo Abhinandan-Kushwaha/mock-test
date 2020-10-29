@@ -26,10 +26,14 @@
     text-align: justify;
 }
 
-.ids{
-    color: yellow;
+.idsRow{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 40px;
+}
+
+.ids{
+    color: yellow;
+    cursor: pointer;
 }

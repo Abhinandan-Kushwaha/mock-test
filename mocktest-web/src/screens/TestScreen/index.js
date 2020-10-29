@@ -95,7 +95,7 @@ const TestScreen = props => {
         });
     }
     const onTimeUp = () => {
-        console.log('time up')
+        props.history.push('/result');
     }
 
     const skipPressed = () => {
@@ -142,7 +142,7 @@ const TestScreen = props => {
     }
 
     const onSubmitPress = () => {
-
+        props.history.push('/result');
     }
 
     const { isLoading,

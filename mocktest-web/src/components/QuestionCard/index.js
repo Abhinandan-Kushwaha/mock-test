@@ -32,7 +32,7 @@ const renderOptions = (props) => {
     const { options } = questionDetails;
     return (
         <div className="optionsContainer">
-            {options.map(option => {
+            {options.map((option, key) => {
                 const { optionNumber, text, isImage, imageUrl } = option;
                 return (
                     <div className="optionsRow">

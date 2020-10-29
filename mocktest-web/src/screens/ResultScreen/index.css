@@ -1,0 +1,83 @@
+.resultContainer{
+    overflow: auto;
+    flex-direction: column;
+    flex:1;
+    background-color: #F3F7F7;
+}
+.resultHeader{
+    background-color: rgb(98, 123, 155);
+    display: flex;
+    flex-direction: column;
+    height:50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultBox{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color:black;
+}
+
+.backBtn{
+    position: fixed;
+    left:10px;
+    top:80px;
+    cursor: pointer;
+}
+
+.resultRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.resultRowHighlighted{
+    display: flex;
+    flex-direction: row;
+    background-color: yellow;
+}
+
+.cell{
+    display: flex;
+    height:60px;
+    width:120px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+
+.cellHeader{
+    display: flex;
+    height:60px;
+    width:120px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    color: blue;
+    font-weight: bold;
+}
+
+.cellRed{
+    display: flex;
+    height:60px;
+    width:120px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    color:red;
+}
+
+.cellGreen{
+    display: flex;
+    height:60px;
+    width:120px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    color:green;
+}
