@@ -1,0 +1,52 @@
+.questionContainer{
+    padding: 10px;
+}
+.questionHeader{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    align-items: center;
+}
+.questionNumberContainer{
+    padding-top:3px;
+    padding-bottom: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border:1px solid black;
+    background-color: black;
+    border-radius: 10px;
+    color: aliceblue;
+    display: flex;
+}
+.questionTextContainer{
+    margin-left: 10px;
+    color: black;
+}
+.optionsContainer{
+    padding:10px;
+    color: black;
+}
+.optionsRow{
+    flex-direction: row;
+    display: flex;
+    flex: 1;
+    padding-bottom: 10px;
+    align-items: center;
+}
+.optionCircle{
+    height: 16px;
+    width: 16px;
+    border:2px solid gray;
+    border-radius: 9px;
+}
+.selectedOptionCircle{
+    height: 16px;
+    width: 16px;
+    border:2px solid gray;
+    background-color: green;
+    border-radius: 9px;
+}
+.optionTextContainer{
+    margin-left: 10px;
+}
