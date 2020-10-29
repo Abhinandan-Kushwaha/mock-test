@@ -23,8 +23,18 @@ question in a graph.
 
 ### Screenshots
 
-![Demo Question](/question.png)
-![Demo OMR Sheet](/omr.png)
+#### Mock Test Screen
+
+![Demo Question](/question.png)<br/>
+
+#### OMR sheet
+
+![Demo OMR Sheet](/omr.png)<br/>
+
+#### Leaderboard
+
+![Demo Leaderboard](/leaderboard.png)<br/>
+
 
 ### Technologies
 
