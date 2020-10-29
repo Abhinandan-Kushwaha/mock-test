@@ -33,7 +33,7 @@ question in a graph.
 
 #### Leaderboard
 
-![Demo Leaderboard](/leaderboard.png)<br/>
+![Demo Leaderboard](/leader.png)<br/>
 
 
 ### Technologies
