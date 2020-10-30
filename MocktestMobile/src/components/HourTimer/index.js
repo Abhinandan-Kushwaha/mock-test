@@ -1,10 +1,11 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import Timer from 'react-compound-timer';
 
 const HourTimer = (props) => {
     const { onTimeUp } = props;
     return (
-        <div>
+        <View>
             <Timer
                 initialTime={3 * 60 * 60 * 1000 + 60000}
                 startImmediately={true}
@@ -18,12 +19,14 @@ const HourTimer = (props) => {
             >
                 {() => (
                     <React.Fragment>
-                        <Timer.Hours /> :
+                        <Text>
+                            <Timer.Hours /> :
                         <Timer.Minutes />
+                        </Text>
                     </React.Fragment>
                 )}
             </Timer>
-        </div>
+        </View>
     )
 }
 
