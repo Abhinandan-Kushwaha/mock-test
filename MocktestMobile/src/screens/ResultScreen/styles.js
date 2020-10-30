@@ -2,8 +2,6 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     resultContainer: {
-        overflow: "scroll",
-        flexDirection: "column",
         flex: 1,
         backgroundColor: "#F3F7F7",
     },
@@ -19,8 +17,6 @@ export const styles = StyleSheet.create({
     resultBox: {
         display: "flex",
         flex: 1,
-        flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
         marginTop: 20,
         color: "black",

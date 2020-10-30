@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         position: "absolute",
-        top: 50,
+        top: 0,
         left: 0,
     }
 });

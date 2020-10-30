@@ -18,14 +18,15 @@ const LandingScreen = props => {
             alert("Please enter User Id");
             return;
         }
-        setState({ loading: true })
+        setState({ ...state, loading: true })
 
         API.post('login/', { userId: id })
             .then(res => {
-                console.log('res', res);
+                // console.log('res', res);
                 if (res && res.status === 200) {
                     const { userName } = res.data;
                     dispatch(login(id, userName));
+                    setState({ ...state, loading: false });
                     props.navigation.navigate('TestScreen')
                 }
             })
@@ -41,9 +42,11 @@ const LandingScreen = props => {
             <View style={styles.landingBox}>
                 <View style={styles.hintBox}>
                     {loading ?
-                        <Text style={styles.loader}>
-                            Loading...
+                        <View style={styles.loader}>
+                            <Text style={styles.normalTextStyle}>
+                                Loading...
                             </Text>
+                        </View>
                         : <View>
                             <Text style={styles.normalTextStyle}>
                                 The app demonstrates online mock-test feature. Since authenticatication is not integrated,

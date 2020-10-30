@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
     questionContainer: {
@@ -59,8 +60,8 @@ export const styles = StyleSheet.create({
         fontSize: 18,
     },
     questionImage: {
-        height: 200,
-        width: 300,
+        width: width,
+        height: width,
         resizeMode: 'contain'
     },
     optionImage: {

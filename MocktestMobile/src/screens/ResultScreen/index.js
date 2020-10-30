@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import { useSelector } from 'react-redux';
 import API from '../../utils/API';
 import { styles } from './styles';
+import { FlatList } from 'react-native-gesture-handler';
+import { Button } from '../../components/Button';
 
 const ResultScreen = props => {
     const [state, setState] = useState({
@@ -44,6 +46,10 @@ const ResultScreen = props => {
                         });
                     })
                     leaderBoardDArray.sort((a, b) => a.right < b.right ? 1 : -1)
+                    let index;
+                    for (index = 0; index < leaderBoardDArray.length; index++) {
+                        leaderBoardDArray[index].rank = index + 1;
+                    }
                     setState({ ...state, leaderBoardDArray })
                 }
                 else {
@@ -60,79 +66,82 @@ const ResultScreen = props => {
 
     return (
         <View style={styles.resultContainer}>
-            <Text
-                onClick={backPressed}
-                style={styles.backBtn}>
-                Back
-            </Text>
-            <Text style={styles.resultHeader}>
-                Leaderboard
-            </Text>
-            {state.leaderBoardDArray.length ? <View style={styles.resultBox}>
-                <View style={styles.resultRow}>
-                    <View style={styles.cell}>
-                        <Text style={styles.cellHeader}>
-                            {"Rank"}
-                        </Text>
+            {state.leaderBoardDArray.length ?
+                <View style={styles.resultBox}>
+                    <View style={{ marginBottom: 20 }}>
+                        <Button
+                            text={"Exit"}
+                            backgroundColor="black"
+                            onClick={() => props.navigation.navigate('LandingScreen')} />
                     </View>
-                    <View style={styles.cell}>
-                        <Text style={styles.cellHeader}>
-                            {"User Id"}
-                        </Text>
-                    </View>
-                    <View style={styles.cell}>
-                        <Text style={styles.cellHeader}>
-                            {"Right"}
-                        </Text>
-                    </View>
-                    <View style={styles.cell}>
-                        <Text style={styles.cellHeader}>
-                            {"Wrong"}
-                        </Text>
-                    </View>
-                    <View style={styles.cell}>
-                        <Text style={styles.cellHeader}>
-                            {"Skipped"}
-                        </Text>
-                    </View>
-                </View>
-                {state.leaderBoardDArray.map((doc, key) => {
-                    const { right, wrong, skipped } = doc;
-                    return (
-                        <View style={userId === doc.userId ? styles.resultRowHighlighted : styles.resultRow}>
-                            <View style={styles.cell}>
-                                <Text>
-                                    {key + 1}
-                                </Text>
-                            </View>
-                            <View style={styles.cell}>
-                                <Text>
-                                    {doc.userId}
-                                </Text>
-                            </View>
-                            <View style={styles.cell}>
-                                <Text style={styles.cellGreen}>
-                                    {right}
-                                </Text>
-                            </View>
-                            <View style={styles.cell}>
-                                <Text style={styles.cellRed}>
-                                    {wrong}
-                                </Text>
-                            </View>
-                            <View style={styles.cell}>
-                                <Text>
-                                    {skipped}
-                                </Text>
-                            </View>
+                    <View style={styles.resultRow}>
+                        <View style={styles.cell}>
+                            <Text style={styles.cellHeader}>
+                                {"Rank"}
+                            </Text>
                         </View>
-                    )
-                })}
-            </View>
+                        <View style={styles.cell}>
+                            <Text style={styles.cellHeader}>
+                                {"User Id"}
+                            </Text>
+                        </View>
+                        <View style={styles.cell}>
+                            <Text style={styles.cellHeader}>
+                                {"Right"}
+                            </Text>
+                        </View>
+                        <View style={styles.cell}>
+                            <Text style={styles.cellHeader}>
+                                {"Wrong"}
+                            </Text>
+                        </View>
+                        <View style={styles.cell}>
+                            <Text style={styles.cellHeader}>
+                                {"Skipped"}
+                            </Text>
+                        </View>
+                    </View>
+                    <FlatList
+                        data={state.leaderBoardDArray}
+                        bounces={false}
+                        keyExtractor={(item, index) => item.key}
+                        renderItem={({ item, key }) => {
+                            const { rank, right, wrong, skipped } = item;
+                            return (
+                                <View style={userId === item.userId ? styles.resultRowHighlighted : styles.resultRow}>
+                                    <View style={styles.cell}>
+                                        <Text>
+                                            {rank}
+                                        </Text>
+                                    </View>
+                                    <View style={styles.cell}>
+                                        <Text>
+                                            {item.userId}
+                                        </Text>
+                                    </View>
+                                    <View style={styles.cell}>
+                                        <Text style={styles.cellGreen}>
+                                            {right}
+                                        </Text>
+                                    </View>
+                                    <View style={styles.cell}>
+                                        <Text style={styles.cellRed}>
+                                            {wrong}
+                                        </Text>
+                                    </View>
+                                    <View style={styles.cell}>
+                                        <Text>
+                                            {skipped}
+                                        </Text>
+                                    </View>
+                                </View>
+                            )
+                        }} />
+                </View>
                 :
-                <Text style={styles.resultBox}>
-                    Loading
-                </Text>}
+                <View style={styles.resultBox}>
+                    <Text>Loading</Text>
+                </View>}
         </View >
     )
 }

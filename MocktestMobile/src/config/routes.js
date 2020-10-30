@@ -12,28 +12,49 @@ export default () => {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                screenOptions={{
-                    headerShown: false,
-                }}>
+            >
                 <Stack.Screen
                     name="LandingScreen"
                     component={LandingScreen}
                     options={{
-                        animationEnabled: false,
+                        title: 'Mock Test',
+                        headerStyle: {
+                            backgroundColor: '#282c34',
+                        },
+                        headerTintColor: '#fff',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+                        },
                     }}
                 />
                 <Stack.Screen
                     name="TestScreen"
                     component={TestScreen}
                     options={{
-                        animationEnabled: false,
+                        title: 'Mock Test',
+                        headerLeft: null,
+                        headerStyle: {
+                            backgroundColor: '#282c34',
+                        },
+                        headerTintColor: '#fff',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+                        },
                     }}
                 />
                 <Stack.Screen
                     name="ResultScreen"
                     component={ResultScreen}
                     options={{
-                        animationEnabled: false,
+                        title: 'Leaderboard',
+                        headerLeft: null,
+                        headerStyle: {
+                            backgroundColor: '#282c34',
+                        },
+                        headerTintColor: '#fff',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+                        },
                     }}
                 />
             </Stack.Navigator>

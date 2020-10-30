@@ -26,9 +26,9 @@ export const styles = StyleSheet.create({
     },
 
     omrQuestionRow: {
-        display: "flex",
         flexDirection: "row",
         justifyContent: "center",
+        alignItems: 'center',
         color: "black",
     },
 
@@ -49,10 +49,9 @@ export const styles = StyleSheet.create({
     },
 
     omrQnumber: {
-        display: "flex",
         height: 40,
         width: 30,
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "center",
     },
 
@@ -60,7 +59,7 @@ export const styles = StyleSheet.create({
         display: "flex",
         height: 40,
         width: 30,
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "center",
     },
 
@@ -90,7 +89,7 @@ export const styles = StyleSheet.create({
 
     iconStyle: {
         height: 16,
-        width: 12,
+        width: 16,
         tintColor: 'blue',
         marginRight: 6,
     }

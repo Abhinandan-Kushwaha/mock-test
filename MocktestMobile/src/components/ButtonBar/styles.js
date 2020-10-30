@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: "space-evenly",
         alignItems: "center",
-        marginBottom: 30
+        marginBottom: 40,
+        marginTop: 15,
     },
     skipButton: {
         fontSize: 16,

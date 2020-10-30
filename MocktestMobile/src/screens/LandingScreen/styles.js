@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
     landingContainer: {
         display: "flex",
         flex: 1,
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: '#282c34'
     },
 
     landingBox: {
@@ -22,8 +23,8 @@ export const styles = StyleSheet.create({
     },
 
     loader: {
-        marginTop: 250,
-        textAlign: "center",
+        color: 'white',
+        fontSize: 18,
     },
 
     hintBox: {

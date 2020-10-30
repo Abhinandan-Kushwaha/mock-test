@@ -69,6 +69,10 @@ const TestScreen = props => {
     }
 
     const onOMRpress = () => {
+        if (state.currentIndex === 0) {
+            alert("Please attempt a question first!")
+            return;
+        }
         setState({ ...state, omrLoading: true });
         API.post('mockTest/omr', { userId: userId, testId: "test1" })
             .then(res => {
@@ -91,11 +95,16 @@ const TestScreen = props => {
 
     const onMinuteOver = () => {
         const { currentIndex } = state;
-        setState({
-            ...state,
-            currentIndex: currentIndex + 1,
-            selectedOptionNumber: 0,
-        });
+        if (currentIndex !== 179) {
+            setState({
+                ...state,
+                currentIndex: currentIndex + 1,
+                selectedOptionNumber: 0,
+            });
+        }
+        else {
+            props.navigation.navigate('ResultScreen');
+        }
     }
     const onTimeUp = () => {
         props.navigation.navigate('ResultScreen');
@@ -145,6 +154,10 @@ const TestScreen = props => {
     }
 
     const onSubmitPress = () => {
+        if (state.currentIndex === 0) {
+            alert("Please attempt a question first!")
+            return;
+        }
         props.navigation.navigate('ResultScreen');
     }
 
@@ -157,10 +170,12 @@ const TestScreen = props => {
         bookmarkedIndices,
         bookmarking } = state;
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             {isLoading
                 ?
-                <Text style={styles.loader}>Loading</Text>
+                <View style={styles.loader}>
+                    <Text>Loading</Text>
+                </View>
                 :
                 <View style={{ flex: 1 }}>
                     <View style={styles.topBarContainer}>
@@ -185,17 +200,25 @@ const TestScreen = props => {
                         questionDetails={questions[currentIndex]}
                         selectedOptionNumber={selectedOptionNumber}
                         optionPressed={optionPressed} />
-                    {currentIndex !== 179 && <ButtonBar
+                    {currentIndex !== 179 ? <ButtonBar
                         selectedOptionNumber={selectedOptionNumber}
                         nextPressed={nextPressed}
                         skipPressed={skipPressed}
-                        nextLoading={nextLoading} />}
+                        nextLoading={nextLoading} />
+                        :
+                        <View style={{ marginHorizontal: 30, marginBottom: 30 }}>
+                            <Button
+                                backgroundColor={selectedOptionNumber === 0 ? "gray" : "green"}
+                                text="Submit"
+                                onClick={selectedOptionNumber === 0 ? null : onSubmitPress} />
+                        </View>
+                    }
                 </View>
             }
             {showOmrSheet && <View style={styles.omrModal}>
                 <OmrScreen backPressed={backPressed} />
             </View>}
-        </SafeAreaView>
+        </View>
     )
 }
 

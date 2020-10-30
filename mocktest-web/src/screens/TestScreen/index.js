@@ -66,6 +66,10 @@ const TestScreen = props => {
     }
 
     const onOMRpress = () => {
+        if (state.currentIndex === 0) {
+            alert("Please attempt a question first!")
+            return;
+        }
         setState({ ...state, omrLoading: true });
         API.post('mockTest/omr', { userId: userId, testId: "test1" })
             .then(res => {
@@ -88,11 +92,16 @@ const TestScreen = props => {
 
     const onMinuteOver = () => {
         const { currentIndex } = state;
-        setState({
-            ...state,
-            currentIndex: currentIndex + 1,
-            selectedOptionNumber: 0,
-        });
+        if (currentIndex !== 179) {
+            setState({
+                ...state,
+                currentIndex: currentIndex + 1,
+                selectedOptionNumber: 0,
+            });
+        }
+        else {
+            props.history.push('/result');
+        }
     }
     const onTimeUp = () => {
         props.history.push('/result');
@@ -142,6 +151,10 @@ const TestScreen = props => {
     }
 
     const onSubmitPress = () => {
+        if (state.currentIndex === 0) {
+            alert("Please attempt a question first!")
+            return;
+        }
         props.history.push('/result');
     }
 
@@ -182,11 +195,18 @@ const TestScreen = props => {
                         questionDetails={questions[currentIndex]}
                         selectedOptionNumber={selectedOptionNumber}
                         optionPressed={optionPressed} />
-                    {currentIndex !== 179 && <ButtonBar
+                    {currentIndex !== 179 ? <ButtonBar
                         selectedOptionNumber={selectedOptionNumber}
                         nextPressed={nextPressed}
                         skipPressed={skipPressed}
-                        nextLoading={nextLoading} />}
+                        nextLoading={nextLoading} />
+                        :
+                        <div style={{ marginHorizontal: 30, marginBottom: 30 }}>
+                            <Button
+                                backgroundColor={selectedOptionNumber === 0 ? "gray" : "green"}
+                                text="Submit"
+                                onClick={selectedOptionNumber === 0 ? null : onSubmitPress} />
+                        </div>}
                 </div>
             }
             {showOmrSheet && <div className="omrModal">
