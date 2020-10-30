@@ -50,3 +50,8 @@
 .optionTextContainer{
     margin-left: 10px;
 }
+
+.questionImage{
+    width:90%;
+    object-fit:contain; 
+}

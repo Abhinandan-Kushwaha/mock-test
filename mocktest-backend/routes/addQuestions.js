@@ -5,7 +5,7 @@ router.route('/addQuestion').get((req, res) => {
     let i = 0;
     let questions = [];
     let qUrl = 'https://dru69sbqnarp.cloudfront.net/imgs/Biology/600x300/food_web.png';
-    let qUrl2 = 'https://drive.google.com/file/d/1Z8pbAaVb01nLJ1_2I2y247exg5krZuMH/view?usp=sharing';
+    let qUrl2 = 'https://scontent.fknu1-1.fna.fbcdn.net/v/t1.0-9/122516503_380697826416901_3745652138873438977_o.jpg?_nc_cat=109&ccb=2&_nc_sid=8024bb&_nc_ohc=9qGzcXGVG7IAX9tw63o&_nc_ht=scontent.fknu1-1.fna&oh=957a27f0e4005243e327fcff30f94674&oe=5FBF1951';
 
     let questionTexts = ['In which of the following light produces image focus in front of the retina?',
         'In the diagram below which is a decomposer?',
