@@ -46,7 +46,7 @@ export default () => {
                     name="ResultScreen"
                     component={ResultScreen}
                     options={{
-                        title: 'Leaderboard',
+                        title: 'Result',
                         headerLeft: null,
                         headerStyle: {
                             backgroundColor: '#282c34',
