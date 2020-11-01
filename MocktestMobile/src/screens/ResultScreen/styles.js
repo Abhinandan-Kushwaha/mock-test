@@ -8,17 +8,18 @@ export const styles = StyleSheet.create({
     resultHeader: {
         backgroundColor: 'rgb(98, 123, 155)',
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         height: 50,
+        width: '100%',
         justifyContent: "center",
         alignItems: "center",
+        marginBottom: 20,
     },
 
     resultBox: {
         display: "flex",
         flex: 1,
         alignItems: "center",
-        marginTop: 20,
         color: "black",
     },
 
@@ -60,5 +61,8 @@ export const styles = StyleSheet.create({
 
     cellGreen: {
         color: "green",
+    },
+    pie: {
+        margin: 15
     }
 });
