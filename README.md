@@ -35,6 +35,10 @@ question in a graph.
 
 ![Demo Leaderboard](/leader.png)<br/>
 
+#### Accuracy Graph
+
+![Demo Accuracy Graph](/accuracy.png)</br/>
+
 
 ### Technologies
 
