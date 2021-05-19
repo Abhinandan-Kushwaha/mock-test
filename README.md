@@ -37,7 +37,7 @@ question in a graph.
 
 #### Accuracy Graph
 
-![Demo Accuracy Graph](/accuracy.png)</br/>
+![Demo Accuracy Graph](/accuracy.png)<br/>
 
 
 ### Technologies
